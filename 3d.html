@@ -1,0 +1,144 @@
+<html>
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #222;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .container {
+      width: 400px;
+      height: 400px;
+      margin: 50px auto;
+      perspective: 1000px;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+    }
+
+    .card:hover {
+      transform: rotateY(180deg);
+    }
+
+    .card .front,
+    .card .back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card .front {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+    }
+
+    .card .back {
+      background: linear-gradient(to right, #0fe15c, #00c6ff);
+      transform: rotateY(180deg);
+    }
+
+    .card .front h1,
+    .card .back h1 {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 40px;
+    }
+
+    .card .front form,
+    .card .back form {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+
+    .card .front form input,
+    .card .back form input {
+      width: 100%;
+      height: 40px;
+      margin: 10px 0;
+      border: none;
+      outline: none;
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .card .front form button,
+    .card .back form button {
+      width: 100%;
+      height: 40px;
+      margin: 10px 0;
+      border: none;
+      outline: none;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: #333;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .card .front form button:hover,
+    .card .back form button:hover {
+      background: #444;
+    }
+
+    .card .front p,
+    .card .back p {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    .card .front p a,
+    .card .back p a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .card .front p a:hover,
+    .card .back p a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="front">
+        <h1>Login</h1>
+        <form>
+          <input type="text" placeholder="Username" required>
+          <input type="password" placeholder="Password" required>
+          <button>Login</button>
+        </form>
+        <p>Don't have an account? <a href="#">Register</a></p>
+      </div>
+      <div class="back">
+        <h1>Register</h1>
+        <form>
+          <input type="text" placeholder="Username" required>
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
+          <button>Register</button>
+        </form>
+        <p>Already have an account? <a href="#">Login</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
